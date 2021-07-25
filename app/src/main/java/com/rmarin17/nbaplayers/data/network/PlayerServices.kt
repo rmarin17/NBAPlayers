@@ -17,6 +17,6 @@ interface PlayerServices {
     fun getPlayersByQuery(@Query(SEARCH) query: String): Observable<List<PlayerResponseModel>>
 
     @GET(SEARCH_PATCH)
-    fun getPlayers(): Observable<PlayerResponseModel>
+    fun getPlayers(): Observable<List<PlayerResponseModel>>
 
 }
