@@ -1,5 +1,8 @@
 package com.rmarin17.nbaplayers.di
 
+import com.rmarin17.nbaplayers.domain.interactors.FetchPlayersInteractor
+import com.rmarin17.nbaplayers.domain.interactors.FetchPlayersInteractorImpl
+import dagger.Binds
 import dagger.Module
 
 /**
@@ -8,4 +11,6 @@ import dagger.Module
 @Module
 abstract class HomeModule {
 
+    @Binds
+    abstract fun provideFetchPlayersInteractor(fetchPlayersInteractor: FetchPlayersInteractorImpl): FetchPlayersInteractor
 }

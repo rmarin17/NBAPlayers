@@ -31,4 +31,7 @@
     <dimen name="search_rounded_background_padding">12dp</dimen>
     <dimen name="search_rounded_background_radius">8dp</dimen>
     <dimen name="search_rounded_background_stroke_width">1dp</dimen>
+    <dimen name="item_player_position_margin">16dp</dimen>
+    <dimen name="item_player_position_margin_top">8dp</dimen>
+    <dimen name="item_player_position_text_size">14sp</dimen>
 </resources>
