@@ -1,6 +1,8 @@
 package com.rmarin17.nbaplayers.di
 
 import com.google.gson.GsonBuilder
+import com.rmarin17.nbaplayers.common.logger.Logger
+import com.rmarin17.nbaplayers.common.logger.LoggerImpl
 import com.rmarin17.nbaplayers.data.network.ApiConstants.URL_BASE
 import com.rmarin17.nbaplayers.data.network.PlayerServices
 import dagger.Module
@@ -33,4 +35,7 @@ class AppModule {
     fun providePlayerServices(retrofit: Retrofit): PlayerServices {
         return retrofit.create(PlayerServices::class.java)
     }
+
+    @Provides
+    fun provideLogger(loggerImpl: LoggerImpl): Logger = loggerImpl
 }
