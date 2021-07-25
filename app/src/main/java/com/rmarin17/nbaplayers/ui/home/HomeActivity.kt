@@ -6,7 +6,11 @@ import com.rmarin17.nbaplayers.common.di.ActivityInjector
 import com.rmarin17.nbaplayers.common.ext.appComponent
 import com.rmarin17.nbaplayers.databinding.ActivityHomeBinding
 import com.rmarin17.nbaplayers.di.HomeComponent
+import com.rmarin17.nbaplayers.ui.search.SearchFragment
 
+/**
+ * Activity entry point.
+ */
 class HomeActivity : AppCompatActivity(), ActivityInjector {
 
     private lateinit var binding: ActivityHomeBinding
@@ -23,6 +27,8 @@ class HomeActivity : AppCompatActivity(), ActivityInjector {
     }
 
     override fun <T> inject(fragment: T) {
-        // TODO - When fragments are done, please injected here.
+        when (fragment) {
+            is SearchFragment -> homeComponent.inject(fragment)
+        }
     }
 }

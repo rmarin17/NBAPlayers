@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fragment Search -->
+    <dimen name="fragment_search_search_view_margin_start">16dp</dimen>
+    <dimen name="fragment_search_search_view_margin_top">16dp</dimen>
+    <dimen name="fragment_search_search_view_margin_end">16dp</dimen>
+    <dimen name="fragment_search_products_recycler_margin_start">16dp</dimen>
+    <dimen name="fragment_search_products_recycler_margin_top">16dp</dimen>
+    <dimen name="fragment_search_products_recycler_margin_end">16dp</dimen>
+    <dimen name="fragment_search_products_recycler_margin_bottom">16dp</dimen>
+
+    <!-- Item Player -->
+    <dimen name="item_player_image_margin_start">16dp</dimen>
+    <dimen name="item_player_image_margin_top">8dp</dimen>
+    <dimen name="item_player_image_margin_bottom">8dp</dimen>
+    <dimen name="item_player_name_margin_start">16dp</dimen>
+    <dimen name="item_player_name_margin_top">8dp</dimen>
+    <dimen name="item_player_name_margin_end">16dp</dimen>
+    <dimen name="item_player_name_text_size">18sp</dimen>
+    <dimen name="item_player_card_margin_start">8dp</dimen>
+    <dimen name="item_player_card_margin_top">8dp</dimen>
+    <dimen name="item_player_card_margin_end">8dp</dimen>
+    <dimen name="item_player_card_margin_bottom">8dp</dimen>
+    <dimen name="item_player_card_elevation">4dp</dimen>
+    <dimen name="item_player_card_corner_radius">8dp</dimen>
+    <dimen name="item_player_team_margin_start">16dp</dimen>
+    <dimen name="item_player_team_margin_top">8dp</dimen>
+    <dimen name="item_player_team_margin_end">16dp</dimen>
+    <dimen name="item_player_team_text_size">14sp</dimen>
+    <dimen name="item_player_image_dimen">100dp</dimen>
+    <dimen name="search_rounded_background_padding">12dp</dimen>
+    <dimen name="search_rounded_background_radius">8dp</dimen>
+    <dimen name="search_rounded_background_stroke_width">1dp</dimen>
+</resources>
