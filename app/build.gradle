@@ -14,6 +14,7 @@ android {
         applicationId "com.rmarin17.nbaplayers"
         minSdkVersion 19
         targetSdkVersion 30
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
 
@@ -48,6 +49,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$app_compact_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.constraintlayout:constraintlayout:$constrain_layout_version"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     // Unit Test
     testImplementation "junit:junit:$junit_version"
@@ -71,4 +73,12 @@ dependencies {
     // RX Java
     implementation "io.reactivex.rxjava3:rxandroid:$rxjava3_version"
     implementation "io.reactivex.rxjava3:rxjava:$rxjava3_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Lifecycles
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 }
