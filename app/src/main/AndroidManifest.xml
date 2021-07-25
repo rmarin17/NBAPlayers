@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rmarin17.nbaplayers">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".NBAApplication"
         android:allowBackup="true"
@@ -10,13 +12,21 @@
         android:roundIcon="@drawable/ic_launcher_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.NBAPlayers">
-        <activity android:name=".ui.home.HomeActivity">
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
+        <provider
+            android:name=".data.providers.RecentSearchProvider"
+            android:authorities="com.rmarin17.nbaplayers.RecentSearchProvider" />
     </application>
 
 </manifest>

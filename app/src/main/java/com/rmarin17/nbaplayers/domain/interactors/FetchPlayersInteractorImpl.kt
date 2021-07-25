@@ -13,18 +13,14 @@ class FetchPlayersInteractorImpl @Inject constructor(private val productsService
     override fun getAllPlayers(): Single<List<PlayerUiModel>> {
         return productsService.getPlayers()
             .firstElement()
-            .map { listPlayer ->
-                listPlayer.map { it.transformToPlayerUiModel() }
-            }
+            .map { it.transformToListOfPlayersUiModel() }
             .toSingle()
     }
 
     override fun getPlayersByQuery(query: String): Single<List<PlayerUiModel>> {
         return productsService.getPlayersByQuery(query)
             .firstElement()
-            .map { listPlayer ->
-                listPlayer.map { it.transformToPlayerUiModel() }
-            }
+            .map { it.transformToListOfPlayersUiModel() }
             .toSingle()
     }
 }

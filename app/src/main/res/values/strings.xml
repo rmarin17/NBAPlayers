@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NBA Players</string>
+    <!-- List Players -->
+    <string name="query_hint_search">Search your favorite player!</string>
+    <!-- Empty View-->
+    <string name="empty_view_title_text">Sorry, we didn\'t find any results to your search, please try another search</string>
+    <!-- Error View -->
+    <string name="error_view_title_text">Sorry, there was an error processing your request, please try again.</string>
+    <string name="error_view_retry_button_text">Retry</string>
 </resources>

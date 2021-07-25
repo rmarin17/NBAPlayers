@@ -2,7 +2,7 @@ package com.rmarin17.nbaplayers.data.network
 
 import com.rmarin17.nbaplayers.data.network.ApiConstants.SEARCH
 import com.rmarin17.nbaplayers.data.network.ApiConstants.SEARCH_PATCH
-import com.rmarin17.nbaplayers.data.network.models.PlayerResponseModel
+import com.rmarin17.nbaplayers.data.network.models.DataResponseModel
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -14,9 +14,9 @@ import retrofit2.http.Query
 interface PlayerServices {
 
     @GET(SEARCH_PATCH)
-    fun getPlayersByQuery(@Query(SEARCH) query: String): Observable<List<PlayerResponseModel>>
+    fun getPlayersByQuery(@Query(SEARCH) query: String): Observable<DataResponseModel>
 
     @GET(SEARCH_PATCH)
-    fun getPlayers(): Observable<List<PlayerResponseModel>>
+    fun getPlayers(): Observable<DataResponseModel>
 
 }
