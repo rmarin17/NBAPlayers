@@ -8,13 +8,30 @@
         android:id="@+id/searchFragment"
         android:name="com.rmarin17.nbaplayers.ui.search.SearchFragment"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment_self"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/fade_out" />
         <argument
             android:name="search_query"
             app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_detailPlayerFragment"
+            app:destination="@id/detailPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPlayerFragment"
+        android:name="com.rmarin17.nbaplayers.ui.detail.DetailPlayerFragment"
+        android:label="DetailPlayerFragment"
+        tools:layout="@layout/fragment_deatil_player">
+        <argument
+            android:name="player"
+            app:argType="com.rmarin17.nbaplayers.ui.models.PlayerUiModel"
             app:nullable="true" />
     </fragment>
 </navigation>

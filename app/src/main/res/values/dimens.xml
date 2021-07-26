@@ -4,10 +4,10 @@
     <dimen name="fragment_search_search_view_margin_start">16dp</dimen>
     <dimen name="fragment_search_search_view_margin_top">16dp</dimen>
     <dimen name="fragment_search_search_view_margin_end">16dp</dimen>
-    <dimen name="fragment_search_products_recycler_margin_start">16dp</dimen>
-    <dimen name="fragment_search_products_recycler_margin_top">16dp</dimen>
-    <dimen name="fragment_search_products_recycler_margin_end">16dp</dimen>
-    <dimen name="fragment_search_products_recycler_margin_bottom">16dp</dimen>
+    <dimen name="fragment_search_players_recycler_margin_start">16dp</dimen>
+    <dimen name="fragment_search_players_recycler_margin_top">16dp</dimen>
+    <dimen name="fragment_search_players_recycler_margin_end">16dp</dimen>
+    <dimen name="fragment_search_players_recycler_margin_bottom">16dp</dimen>
 
     <!-- Item Player -->
     <dimen name="item_player_image_margin_start">16dp</dimen>
@@ -47,4 +47,17 @@
     <dimen name="error_view_title_margin_top">16dp</dimen>
     <dimen name="error_view_title_text_size">18sp</dimen>
     <dimen name="error_view_retry_button_margin_top">24dp</dimen>
+
+    <!-- Player Detail -->
+    <dimen name="player_detail_name_text_size">24sp</dimen>
+    <dimen name="player_detail_name_margin">16dp</dimen>
+    <dimen name="player_detail_team_position_margin_start">16dp</dimen>
+    <dimen name="player_detail_team_position_margin_top">4dp</dimen>
+    <dimen name="player_detail_team_position_text_size">14sp</dimen>
+    <dimen name="player_detail_image_height">300dp</dimen>
+    <dimen name="player_detail_image_margin">16dp</dimen>
+    <dimen name="player_detail_image_margin_top">8dp</dimen>
+    <dimen name="player_detail_weight_margin">16dp</dimen>
+    <dimen name="player_detail_weight_margin_top">8dp</dimen>
+    <dimen name="player_detail_weight_value_margin">4dp</dimen>
 </resources>

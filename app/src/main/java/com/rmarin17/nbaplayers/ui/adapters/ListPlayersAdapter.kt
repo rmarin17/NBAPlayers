@@ -30,9 +30,9 @@ class ListPlayersAdapter(
         return players.size
     }
 
-    fun updatePlayerList(listProducts: List<PlayerUiModel>) {
+    fun updatePlayerList(listPlayers: List<PlayerUiModel>) {
         players.clear()
-        players.addAll(listProducts)
+        players.addAll(listPlayers)
         notifyDataSetChanged()
     }
 }

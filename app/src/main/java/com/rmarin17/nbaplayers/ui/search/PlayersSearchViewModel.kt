@@ -6,6 +6,7 @@ import com.rmarin17.nbaplayers.common.BaseViewModel
 import com.rmarin17.nbaplayers.common.ext.applyIOSubscribeMainThread
 import com.rmarin17.nbaplayers.common.logger.Logger
 import com.rmarin17.nbaplayers.domain.interactors.FetchPlayersInteractor
+import com.rmarin17.nbaplayers.ui.models.PlayerUiModel
 import com.rmarin17.nbaplayers.ui.navigator.HomeNavigator
 import io.reactivex.rxjava3.disposables.Disposable
 import javax.inject.Inject
@@ -15,7 +16,8 @@ import javax.inject.Inject
  */
 class PlayersSearchViewModel @Inject constructor(
     private val fetchPlayersInteractor: FetchPlayersInteractor,
-    private val logger: Logger
+    private val logger: Logger,
+    private val navigator: HomeNavigator
 ) : BaseViewModel() {
 
     private val _playersSearchState = MutableLiveData<PlayerSearchState>()
@@ -27,34 +29,38 @@ class PlayersSearchViewModel @Inject constructor(
         }
     }
 
-    fun searchProductsByQuery(query: String) {
+    fun searchPlayersByQuery(query: String) {
         _playersSearchState.value = PlayerSearchState.Loading {
-            addDisposable(executeFetchProductsByQuery(query))
+            addDisposable(executeFetchPlayersByQuery(query))
         }
+    }
+
+    fun navigateToPlayerDetail(player: PlayerUiModel) {
+        navigator.navigateToPlayerDetail(player)
     }
 
     private fun executeFetchPlayers(): Disposable {
         return fetchPlayersInteractor.getAllPlayers()
             .applyIOSubscribeMainThread()
             .subscribe(
-                { products ->
-                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(products)
+                { players ->
+                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(players)
                 }, {
                     _playersSearchState.value = PlayerSearchState.PlayerResultFailure
-                    logger.logMessage(this.javaClass.name, "Error on getDefaultProducts due to: ${it.localizedMessage}", Logger.Level.ERROR)
+                    logger.logMessage(this.javaClass.name, "Error on executeFetchPlayers due to: ${it.localizedMessage}", Logger.Level.ERROR)
                 }
             )
     }
 
-    private fun executeFetchProductsByQuery(query: String): Disposable {
+    private fun executeFetchPlayersByQuery(query: String): Disposable {
         return fetchPlayersInteractor.getPlayersByQuery(query)
             .applyIOSubscribeMainThread()
             .subscribe(
-                { products ->
-                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(products)
+                { players ->
+                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(players)
                 }, {
                     _playersSearchState.value = PlayerSearchState.PlayerResultFailure
-                    logger.logMessage(this.javaClass.name, "Error on searchProductsByQuery due to: ${it.localizedMessage}", Logger.Level.ERROR)
+                    logger.logMessage(this.javaClass.name, "Error on executeFetchPlayersByQuery due to: ${it.localizedMessage}", Logger.Level.ERROR)
                 }
             )
     }

@@ -8,17 +8,17 @@ import javax.inject.Inject
 /**
  * Implementation of FetchPlayersInteractorImpl
  */
-class FetchPlayersInteractorImpl @Inject constructor(private val productsService: PlayerServices) : FetchPlayersInteractor {
+class FetchPlayersInteractorImpl @Inject constructor(private val playersService: PlayerServices) : FetchPlayersInteractor {
 
     override fun getAllPlayers(): Single<List<PlayerUiModel>> {
-        return productsService.getPlayers()
+        return playersService.getPlayers()
             .firstElement()
             .map { it.transformToListOfPlayersUiModel() }
             .toSingle()
     }
 
     override fun getPlayersByQuery(query: String): Single<List<PlayerUiModel>> {
-        return productsService.getPlayersByQuery(query)
+        return playersService.getPlayersByQuery(query)
             .firstElement()
             .map { it.transformToListOfPlayersUiModel() }
             .toSingle()
