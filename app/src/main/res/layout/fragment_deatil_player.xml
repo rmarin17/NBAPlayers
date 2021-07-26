@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/player_detail_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_name_margin"
+        android:layout_marginTop="@dimen/player_detail_name_margin"
+        android:layout_marginEnd="@dimen/player_detail_name_margin"
+        android:textSize="@dimen/player_detail_name_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Player Name" />
+
+    <TextView
+        android:id="@+id/player_detail_team_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_team_position_margin_start"
+        android:layout_marginTop="@dimen/player_detail_team_position_margin_top"
+        android:textSize="@dimen/player_detail_team_position_text_size"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_detail_name"
+        tools:text="Red Bulls | C-F" />
+
+    <ImageView
+        android:id="@+id/player_detail_image"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/player_detail_image_height"
+        android:layout_marginStart="@dimen/player_detail_image_margin"
+        android:layout_marginTop="@dimen/player_detail_image_margin_top"
+        android:layout_marginEnd="@dimen/player_detail_image_margin"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_detail_team_position"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/player_detail_weight_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_weight_margin"
+        android:layout_marginTop="@dimen/player_detail_weight_margin_top"
+        android:text="@string/product_detail_stock_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_detail_image" />
+
+    <TextView
+        android:id="@+id/player_detail_weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_weight_value_margin"
+        android:layout_marginEnd="@dimen/player_detail_weight_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/player_detail_weight_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_detail_weight_title"
+        app:layout_constraintTop_toTopOf="@+id/player_detail_weight_title"
+        tools:text="8 pounds" />
+
+    <TextView
+        android:id="@+id/player_detail_height_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_weight_margin"
+        android:layout_marginTop="@dimen/player_detail_weight_margin_top"
+        android:text="@string/product_detail_stock_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_detail_weight_title" />
+
+    <TextView
+        android:id="@+id/player_detail_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/player_detail_weight_value_margin"
+        android:layout_marginEnd="@dimen/player_detail_weight_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/player_detail_height_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_detail_height_title"
+        app:layout_constraintTop_toTopOf="@+id/player_detail_height_title"
+        tools:text="10 inches" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

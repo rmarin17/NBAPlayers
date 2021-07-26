@@ -102,7 +102,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun onClickItem(player: PlayerUiModel) {
-        // TODO - Add navigation to player detail.
+        viewModel.navigateToPlayerDetail(player)
     }
 
     private fun showHideLoadingView(isVisible: Boolean) {

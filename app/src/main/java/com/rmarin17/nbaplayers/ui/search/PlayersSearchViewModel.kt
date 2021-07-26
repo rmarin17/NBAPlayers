@@ -6,6 +6,7 @@ import com.rmarin17.nbaplayers.common.BaseViewModel
 import com.rmarin17.nbaplayers.common.ext.applyIOSubscribeMainThread
 import com.rmarin17.nbaplayers.common.logger.Logger
 import com.rmarin17.nbaplayers.domain.interactors.FetchPlayersInteractor
+import com.rmarin17.nbaplayers.ui.models.PlayerUiModel
 import com.rmarin17.nbaplayers.ui.navigator.HomeNavigator
 import io.reactivex.rxjava3.disposables.Disposable
 import javax.inject.Inject
@@ -15,7 +16,8 @@ import javax.inject.Inject
  */
 class PlayersSearchViewModel @Inject constructor(
     private val fetchPlayersInteractor: FetchPlayersInteractor,
-    private val logger: Logger
+    private val logger: Logger,
+    private val navigator: HomeNavigator
 ) : BaseViewModel() {
 
     private val _playersSearchState = MutableLiveData<PlayerSearchState>()
@@ -31,6 +33,10 @@ class PlayersSearchViewModel @Inject constructor(
         _playersSearchState.value = PlayerSearchState.Loading {
             addDisposable(executeFetchProductsByQuery(query))
         }
+    }
+
+    fun navigateToPlayerDetail(player: PlayerUiModel) {
+        navigator.navigateToPlayerDetail(player)
     }
 
     private fun executeFetchPlayers(): Disposable {

@@ -7,7 +7,9 @@ import com.rmarin17.nbaplayers.R
 import com.rmarin17.nbaplayers.common.ext.findNavController
 import com.rmarin17.nbaplayers.common.ext.navigateSafe
 import com.rmarin17.nbaplayers.common.ext.performActionWithSafeActivity
+import com.rmarin17.nbaplayers.ui.detail.DetailPlayerFragment.Companion.PLAYER_DETAIL
 import com.rmarin17.nbaplayers.ui.home.HomeActivity
+import com.rmarin17.nbaplayers.ui.models.PlayerUiModel
 import com.rmarin17.nbaplayers.ui.search.SearchFragment.Companion.SEARCH_QUERY
 import java.lang.ref.WeakReference
 import javax.inject.Inject
@@ -27,6 +29,13 @@ class HomeNavigatorImpl @Inject constructor(activity: HomeActivity) : HomeNaviga
         val bundle = bundleOf(SEARCH_QUERY to query)
         weakActivity.performActionWithSafeActivity {
             it.findHomeNavController().navigateSafe(R.id.action_searchFragment_self, bundle, null)
+        }
+    }
+
+    override fun navigateToPlayerDetail(player: PlayerUiModel) {
+        val bundle = bundleOf(PLAYER_DETAIL to player)
+        weakActivity.performActionWithSafeActivity {
+            it.findHomeNavController().navigateSafe(R.id.action_searchFragment_to_detailPlayerFragment, bundle, null)
         }
     }
 }

@@ -18,8 +18,7 @@ class ListPlayersViewHolder(
 
     fun bind(product: PlayerUiModel) {
         with(product) {
-            // TODO - When services return image for players, please pass it here.
-            binding.itemPlayerImage.displayImage(MOCK_PLAYER_IMAGE)
+            binding.itemPlayerImage.displayImage(image)
             binding.itemPlayerName.text = name
             binding.itemPlayerTeam.text = team.name
             binding.itemPlayerPosition.text = position
@@ -28,10 +27,4 @@ class ListPlayersViewHolder(
             }
         }
     }
-
-    companion object {
-        // TODO - When services return image for players, please remove this workaround
-        private const val MOCK_PLAYER_IMAGE = "https://image.shutterstock.com/image-photo/8-nov-2019-beijing-china-260nw-1554266144.jpg"
-    }
-
 }

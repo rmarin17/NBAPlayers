@@ -22,8 +22,8 @@ data class PlayerResponseModel(
             id = id,
             name = "$firstName $lastName",
             position = position,
-            weight = weightPounds.toString(),
-            height = heightInches.toString(),
+            weight = weightPounds,
+            height = heightInches,
             team = team.transformToTeamUiModel()
         )
     }

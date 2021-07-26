@@ -7,4 +7,9 @@
     <!-- Error View -->
     <string name="error_view_title_text">Sorry, there was an error processing your request, please try again.</string>
     <string name="error_view_retry_button_text">Retry</string>
+    <!-- Player Detail -->
+    <string name="product_detail_stock_text">Weight:</string>
+    <string name="player_detail_team_position">%1s | %2s</string>
+    <string name="player_detail_weight">%d pounds</string>
+    <string name="player_detail_height">%d inches</string>
 </resources>
