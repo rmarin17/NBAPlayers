@@ -16,8 +16,8 @@ class ListPlayersViewHolder(
 
     private val binding = ItemPlayerBinding.bind(itemView)
 
-    fun bind(product: PlayerUiModel) {
-        with(product) {
+    fun bind(player: PlayerUiModel) {
+        with(player) {
             binding.itemPlayerImage.displayImage(image)
             binding.itemPlayerName.text = name
             binding.itemPlayerTeam.text = team.name

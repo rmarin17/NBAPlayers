@@ -29,9 +29,9 @@ class PlayersSearchViewModel @Inject constructor(
         }
     }
 
-    fun searchProductsByQuery(query: String) {
+    fun searchPlayersByQuery(query: String) {
         _playersSearchState.value = PlayerSearchState.Loading {
-            addDisposable(executeFetchProductsByQuery(query))
+            addDisposable(executeFetchPlayersByQuery(query))
         }
     }
 
@@ -43,24 +43,24 @@ class PlayersSearchViewModel @Inject constructor(
         return fetchPlayersInteractor.getAllPlayers()
             .applyIOSubscribeMainThread()
             .subscribe(
-                { products ->
-                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(products)
+                { players ->
+                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(players)
                 }, {
                     _playersSearchState.value = PlayerSearchState.PlayerResultFailure
-                    logger.logMessage(this.javaClass.name, "Error on getDefaultProducts due to: ${it.localizedMessage}", Logger.Level.ERROR)
+                    logger.logMessage(this.javaClass.name, "Error on executeFetchPlayers due to: ${it.localizedMessage}", Logger.Level.ERROR)
                 }
             )
     }
 
-    private fun executeFetchProductsByQuery(query: String): Disposable {
+    private fun executeFetchPlayersByQuery(query: String): Disposable {
         return fetchPlayersInteractor.getPlayersByQuery(query)
             .applyIOSubscribeMainThread()
             .subscribe(
-                { products ->
-                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(products)
+                { players ->
+                    _playersSearchState.value = PlayerSearchState.PlayerResultSuccess(players)
                 }, {
                     _playersSearchState.value = PlayerSearchState.PlayerResultFailure
-                    logger.logMessage(this.javaClass.name, "Error on searchProductsByQuery due to: ${it.localizedMessage}", Logger.Level.ERROR)
+                    logger.logMessage(this.javaClass.name, "Error on executeFetchPlayersByQuery due to: ${it.localizedMessage}", Logger.Level.ERROR)
                 }
             )
     }

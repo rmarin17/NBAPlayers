@@ -30,7 +30,7 @@
         android:label="DetailPlayerFragment"
         tools:layout="@layout/fragment_deatil_player">
         <argument
-            android:name="product"
+            android:name="player"
             app:argType="com.rmarin17.nbaplayers.ui.models.PlayerUiModel"
             app:nullable="true" />
     </fragment>

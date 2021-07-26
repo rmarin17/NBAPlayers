@@ -59,12 +59,5 @@
     <dimen name="player_detail_image_margin_top">8dp</dimen>
     <dimen name="player_detail_weight_margin">16dp</dimen>
     <dimen name="player_detail_weight_margin_top">8dp</dimen>
-    <dimen name="product_detail_buy_button_margin">24dp</dimen>
     <dimen name="player_detail_weight_value_margin">4dp</dimen>
-    <dimen name="product_detail_shipping_margin">16dp</dimen>
-    <dimen name="product_detail_shipping_margin_top">8dp</dimen>
-    <dimen name="product_detail_shipping_text_size">14sp</dimen>
-    <dimen name="product_detail_price_margin">16dp</dimen>
-    <dimen name="product_detail_price_margin_top">8dp</dimen>
-    <dimen name="product_detail_price_text_size">18sp</dimen>
 </resources>

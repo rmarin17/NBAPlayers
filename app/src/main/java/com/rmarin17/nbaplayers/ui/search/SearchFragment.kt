@@ -62,8 +62,8 @@ class SearchFragment : Fragment() {
     private fun setUpView() {
         with(binding) {
             playersAdapter = ListPlayersAdapter(mutableListOf(), ::onClickItem)
-            productsRecycler.layoutManager = LinearLayoutManager(context)
-            productsRecycler.adapter = playersAdapter
+            playersRecycler.layoutManager = LinearLayoutManager(context)
+            playersRecycler.adapter = playersAdapter
             val searchManager =
                 requireActivity().getSystemService(Context.SEARCH_SERVICE) as SearchManager
             searchView.apply {
@@ -97,7 +97,7 @@ class SearchFragment : Fragment() {
 
     private fun searchQueryOrGetPlayers() {
         searchQuery?.let {
-            viewModel.searchProductsByQuery(it)
+            viewModel.searchPlayersByQuery(it)
         } ?: viewModel.getAllPlayers()
     }
 
@@ -109,7 +109,7 @@ class SearchFragment : Fragment() {
         binding.emptyView.visible(false)
         binding.errorView.visible(false)
         binding.progressBar.visible(isVisible)
-        binding.productsRecycler.visible(!isVisible)
+        binding.playersRecycler.visible(!isVisible)
     }
 
     private fun showFailureErrorView() {

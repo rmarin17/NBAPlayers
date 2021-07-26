@@ -50,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/player_detail_weight_margin"
         android:layout_marginTop="@dimen/player_detail_weight_margin_top"
-        android:text="@string/product_detail_stock_text"
+        android:text="@string/player_detail_weight_text"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_detail_image" />
 
@@ -72,7 +73,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/player_detail_weight_margin"
         android:layout_marginTop="@dimen/player_detail_weight_margin_top"
-        android:text="@string/product_detail_stock_text"
+        android:textStyle="bold"
+        android:text="@string/player_detail_height_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_detail_weight_title" />
 
